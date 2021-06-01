@@ -1,0 +1,98 @@
+{
+  "strings": {
+    "answers_file": "../Dropbox/Tableau Dashboards/data/{nickname}_answers_data.csv",
+    "respondents_file": "../Dropbox/Tableau Dashboards/data/{nickname}_respondents_data.csv",
+    "profiles_file": "../Dropbox/Tableau Dashboards/data/{nickname}_profiles_data.csv",
+    "questions_file": "../Dropbox/Tableau Dashboards/data/{nickname}_questions_data.csv",
+    "open_ended_file": "../Dropbox/Tableau Dashboards/data/{nickname}_openended_data.csv",
+    "open_ended_sa_file": "../Dropbox/Tableau Dashboards/data/{nickname}_openended_sa_data.csv",
+    "collectors_file": "../Dropbox/Tableau Dashboards/data/{nickname}_collectors_data.csv",
+    "padded_answers_file": "../Dropbox/Tableau Dashboards/data/{nickname}_padded_answers_data.csv"
+  },
+  "single_json_file": "../Dropbox/Tableau Dashboards/{nickname}_full.json",
+  "access_token": "{access_token}",
+  "survey_id": "{survey_id}",
+  "proxy": "{proxy}",
+  "numbers": {
+    "DryRun": false,
+    "DryRunLimit": 10,
+    "use_proxy": false,
+    "get_random_proxy": false,
+    "score_default_value": 0
+  },
+  "booleans": {
+    "generate_quadrants": "{have_quadrants}",
+    "generate_openended": "{have_openended}",
+    "generate_profiles": "{have_profiles}",
+    "generate_sa": "{have_sentiment_analysis}",
+    "generate_padded_answers": "{have_padded_answers}",
+    "is_network_map": "{is_network_map}"
+  },
+  "structures": {
+    "openended_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer"
+    ],
+    "answers_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer",
+      "topic",
+      "score"
+    ],
+    "questions_header": [
+      "survey_id",
+      "page_id",
+      "question_id",
+      "question_label",
+      "question_heading",
+      "question_type",
+      "question_subtype"
+    ],
+    "respondent_header": [
+      "survey_id",
+      "respondent_id",
+      "duration_seconds",
+      "start_date",
+      "end_date",
+      "ip_address",
+      "collector_id",
+      "status"
+    ],
+    "sa_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer",
+      "polarity",
+      "subjectivity"
+    ],
+    "collectors_header": [
+      "survey_id",
+      "collector_id",
+      "name"
+    ]
+  },
+  "config": {
+    "profiles_header": [
+      "survey_id",
+      "respondent_id"
+    ],
+    "profiles_multiple": [],
+    "respondent_profile_questions": {},
+    "quadrant_files": [],
+    "quadrant_headers": [],
+    "quadrant_questions": [],
+    "quadrant_config": [],
+    "quadrant_replacements": {}
+  }
+}

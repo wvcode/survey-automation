@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@wvcode/gsheet-wrapper": "^0.5.3",
+    "@wvcode/sm-wrapper": "^1.0.1",
+    "@wvcode/utils": "^1.0.0",
+    "config": "^3.3.6",
+    "lodash": "^4.17.21",
+    "log4js": "^6.3.0"
+  }
+}

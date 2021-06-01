@@ -1,0 +1,40 @@
+{
+  "url": "https://randomuser.me/api/",
+  "access_token": "ZcKWsop3BlSFru95Isyko7Apq1K29WxnOJ3yUz1hS6XfyubBK71cnRTp-f1fXmbjVUeHO79yVlICzgJ4wGWaYL4UAMms-Xjnvp70zIe2PP3CKCcXyQ7WYBAGn5Kmd2LO",
+  "surveySheetId": "1XHhTd2bxVqZabTNu_kmxiE6QLrqPfalmXCcmiS2JvdA",
+  "DEVsurveySheetId": "1vYWfT0RGEphXPL621Nu9AxrCihh5AmemYTOL4gS_cAI",
+  "configRanges": [
+    "Survey Main Configuration!A1:K",
+    "Survey Profile Configuration!A1:C",
+    "Survey Quadrant Configuration!A1:D"
+  ],
+  "dataRanges": [
+    "List of Surveys!A1:C",
+    "List of Questions!A1:D"
+  ],
+  "updateRanges": [
+    "List of Surveys!A2:C",
+    "List of Questions!A2:D"
+  ],
+  "scopes": [
+    "https: //www.googleapis.com/auth/drive",
+    "https: //www.googleapis.com/auth/contacts.readonly",
+    "https: //www.googleapis.com/auth/spreadsheets"
+  ],
+  "configurationFolder": "input/config",
+  "configFilePath": "`./input/config/${client}/${dvs}.json`",
+  "dataStructure": {
+    "status": 0,
+    "answers": [],
+    "respondents": [],
+    "questions": [],
+    "profiles": [],
+    "quadrants": [],
+    "open_ended": [],
+    "open_ended_sa": [],
+    "padded_answers": [],
+    "collectors": [],
+    "network_map": [],
+    "errors": null
+  }
+}
