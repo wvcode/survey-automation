@@ -175,7 +175,7 @@ class SurveyProccessor {
     let topics = []
     this.#answers.forEach(question => {
       if (question.question_id == questionId) {
-        if (question.topic != '' && !_.has(topics, question.topic)) {
+        if (question.topic != '' && _.has(topics, question.topic)) {
           topics.push(question.topic)
         }
       }
@@ -209,7 +209,8 @@ class SurveyProccessor {
                   data: {},
                 }
                 question.answers.choices.forEach(choice => {
-                  questions[question.id].choices[rowId] = choice.text
+                  questions[question.id].choices[rowId]['data'][choice.id] =
+                    choice.text
                 })
               })
             } else {
@@ -361,9 +362,13 @@ class SurveyProccessor {
                         item.row_id
                       ].text?.replace('\xa0', ' ')
                       record.answer =
-                        this.#questionList[questionId].choices[item.row_id]
+                        this.#questionList[questionId].choices[item.row_id][
+                        'data'
+                        ][item.choice_id]
                       record.score = this.returnScore(
-                        this.#questionList[questionId].choices[item.row_id]
+                        this.#questionList[questionId].choices[item.row_id][
+                        'data'
+                        ][item.choice_id]
                       )
                     } else {
                       record.topic = 'Open Ended'
@@ -380,7 +385,7 @@ class SurveyProccessor {
                 try {
                   item.score =
                     cfg.config.quadrant_replacements[item.question_id][
-                      item.answer
+                    item.answer
                     ]
                 } catch (e) {
                   item.score = 0
@@ -524,6 +529,31 @@ class SurveyProccessor {
             }
           }
         }
+      } else if (
+        Object.keys(keyData).includes(item.page_id) &&
+        keyData[item.page_id].includes(item.question_id) &&
+        item.question_type != 'open_ended' &&
+        item.topic == 'Open Ended'
+      ) {
+        if (!Object.keys(rawData).includes(item.respondent_id)) {
+          rawData[item.respondent_id] = {}
+          // if (!useTopic) {
+          //   Object.keys(qstLookup).forEach(key => {
+          //     rawData[item.respondent_id][qstLookup[key]] = ''
+          //   })
+          // }
+        }
+        rawData[item.respondent_id][qstLookup[item.question_id] || 'garbage'] = 'Other'
+      } else {
+        if (!Object.keys(rawData).includes(item.respondent_id)) {
+          rawData[item.respondent_id] = {}
+          // if (!useTopic) {
+          //   Object.keys(qstLookup).forEach(key => {
+          //     rawData[item.respondent_id][qstLookup[key]] = ''
+          //   })
+          // }
+        }
+        rawData[item.respondent_id][qstLookup[item.question_id] || 'garbage'] = item.answer || ''
       }
     })
     let returnValue = []
@@ -534,15 +564,18 @@ class SurveyProccessor {
           cpItem['topic'] = keyTopic
           cpItem['respondent_id'] = key
           cpItem['survey_id'] = this.#survey_id
+          Object.keys(cpItem).forEach(key => key == 'garbage' ? delete cpItem[key] : {})
           returnValue.push(cpItem)
         })
       } else {
         let cpItem = rawData[key]
         cpItem['respondent_id'] = key
         cpItem['survey_id'] = this.#survey_id
+        Object.keys(cpItem).forEach(key => key == 'garbage' ? delete cpItem[key] : {})
         returnValue.push(cpItem)
       }
     })
+
     return returnValue
   }
 

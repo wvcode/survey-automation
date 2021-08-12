@@ -154,7 +154,7 @@ async function execute(cfg, log, params) {
         })
 
         fs.writeFileSync(
-          `${cfg.configurationFolder}/${client}/${dvs}.json`,
+          `${cfg.configurationFolder}/${client}/${nickName}.json`,
           JSON.stringify(currentConfig)
         )
 

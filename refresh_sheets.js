@@ -99,7 +99,7 @@ async function execute(cfg, log, params) {
               newQuestions.push({
                 'Survey Key': `${survey.id}#${survey.title}`,
                 'Question Key': `${page.id}#${question.id}#Question_${questionNumber}`,
-                'Question Title': question.title,
+                'Question Title': question.headings[0]['heading'],
                 'Question Type': question.family,
               })
               questionNumber++
