@@ -1,17 +1,17 @@
 {
     "strings": {
-        "answers_file": "../Dropbox/data/imec_fs_answers_data.csv",
-        "respondents_file": "../Dropbox/data/imec_fs_respondents_data.csv",
-        "profiles_file": "../Dropbox/data/imec_fs_profiles_data.csv",
-        "questions_file": "../Dropbox/data/imec_fs_questions_data.csv",
-        "open_ended_file": "../Dropbox/data/imec_fs_openended_data.csv",
-        "open_ended_sa_file": "../Dropbox/data/imec_fs_openended_sa_data.csv",
-        "collectors_file": "../Dropbox/data/imec_fs_collectors_data.csv",
-        "padded_answers_file": "../Dropbox/data/imec_fs_padded_answers_data.csv"
+        "answers_file": "../Dropbox/Tableau Dashboards/data/eeci_eps_answers_data.csv",
+        "respondents_file": "../Dropbox/Tableau Dashboards/data/eeci_eps_respondents_data.csv",
+        "profiles_file": "../Dropbox/Tableau Dashboards/data/eeci_eps_profiles_data.csv",
+        "questions_file": "../Dropbox/Tableau Dashboards/data/eeci_eps_questions_data.csv",
+        "open_ended_file": "../Dropbox/Tableau Dashboards/data/eeci_eps_openended_data.csv",
+        "open_ended_sa_file": "../Dropbox/Tableau Dashboards/data/eeci_eps_openended_sa_data.csv",
+        "collectors_file": "../Dropbox/Tableau Dashboards/data/eeci_eps_collectors_data.csv",
+        "padded_answers_file": "../Dropbox/Tableau Dashboards/data/eeci_eps_padded_answers_data.csv"
     },
-    "single_json_file": "../Dropbox/imec_fs_full.json",
+    "single_json_file": "../Dropbox/Tableau Dashboards/eeci_eps_full.json",
     "access_token": "ZcKWsop3BlSFru95Isyko7Apq1K29WxnOJ3yUz1hS6XfyubBK71cnRTp-f1fXmbjVUeHO79yVlICzgJ4wGWaYL4UAMms-Xjnvp70zIe2PP3CKCcXyQ7WYBAGn5Kmd2LO",
-    "survey_id": "310068677",
+    "survey_id": "312277217",
     "proxy": "{proxy}",
     "numbers": {
         "DryRun": false,
@@ -26,7 +26,7 @@
         "generate_profiles": true,
         "generate_sa": false,
         "generate_padded_answers": true,
-        "is_network_map": true
+        "is_network_map": false
     },
     "structures": {
         "openended_header": [
@@ -87,17 +87,22 @@
             "survey_id",
             "respondent_id",
             "Question_1",
-            "Question_2"
+            "Question_2",
+            "Question_3",
+            "cnt"
         ],
-        "profiles_multiple": [],
+        "profiles_multiple": [
+            "Question 3"
+        ],
         "respondent_profile_questions": {
-            "173766580": [
-                "688738269",
-                "688738271"
+            "178517179": [
+                "708852216",
+                "708852217",
+                "708852224"
             ]
         },
         "quadrant_files": [
-            "../Dropbox/data/imec_fs_quadrants_data_1.csv"
+            "../Dropbox/Tableau Dashboards/data/eeci_eps_quadrants_data_1.csv"
         ],
         "quadrant_headers": [
             [
@@ -110,9 +115,9 @@
         ],
         "quadrant_questions": [
             {
-                "173766582": [
-                    "688738274",
-                    "688738275"
+                "178517181": [
+                    "708852220",
+                    "708852221"
                 ]
             }
         ],
