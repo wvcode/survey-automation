@@ -1,0 +1,173 @@
+{
+  "strings": {
+    "answers_file": "../Dropbox/data/falm_ep_answers_data.csv",
+    "respondents_file": "../Dropbox/data/falm_ep_respondents_data.csv",
+    "profiles_file": "../Dropbox/data/falm_ep_profiles_data.csv",
+    "questions_file": "../Dropbox/falm_ep_questions_data.csv",
+    "open_ended_file": "../Dropbox/data/falm_ep_openended_data.csv",
+    "open_ended_sa_file": "../Dropbox/data/falm_ep_openended_sa_data.csv",
+    "collectors_file": "../Dropbox/data/falm_ep_collectors_data.csv",
+    "padded_answers_file": "../Dropbox/data/falm_ep_padded_answers_data.csv"
+  },
+  "single_json_file": "../Dropbox/falm_ep_full.json",
+  "access_token": "ZcKWsop3BlSFru95Isyko7Apq1K29WxnOJ3yUz1hS6XfyubBK71cnRTp-f1fXmbjVUeHO79yVlICzgJ4wGWaYL4UAMms-Xjnvp70zIe2PP3CKCcXyQ7WYBAGn5Kmd2LO",
+  "survey_id": "314030687",
+  "proxy": "{proxy}",
+  "numbers": {
+    "DryRun": false,
+    "DryRunLimit": 10,
+    "use_proxy": false,
+    "get_random_proxy": false,
+    "score_default_value": 0
+  },
+  "booleans": {
+    "generate_quadrants": true,
+    "generate_openended": true,
+    "generate_profiles": true,
+    "generate_sa": false,
+    "generate_padded_answers": true,
+    "is_network_map": false
+  },
+  "structures": {
+    "openended_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer"
+    ],
+    "answers_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer",
+      "topic",
+      "score"
+    ],
+    "questions_header": [
+      "survey_id",
+      "page_id",
+      "question_id",
+      "question_label",
+      "question_heading",
+      "question_type",
+      "question_subtype"
+    ],
+    "respondent_header": [
+      "survey_id",
+      "respondent_id",
+      "duration_seconds",
+      "start_date",
+      "end_date",
+      "ip_address",
+      "collector_id",
+      "status"
+    ],
+    "sa_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer",
+      "polarity",
+      "subjectivity"
+    ],
+    "collectors_header": [
+      "survey_id",
+      "collector_id",
+      "name"
+    ]
+  },
+  "config": {
+    "profiles_header": [
+      "survey_id",
+      "respondent_id",
+      "Question 2",
+      "Question 3"
+    ],
+    "profiles_multiple": [],
+    "respondent_profile_questions": {
+      "182331755": [
+        "725592126",
+        "725599555"
+      ]
+    },
+    "quadrant_files": [
+      "../Dropbox/data/falm_ep_quadrants_data_1.csv",
+      "../Dropbox/data/falm_ep_quadrants_data_2.csv",
+      "../Dropbox/data/falm_ep_quadrants_data_3.csv"
+    ],
+    "quadrant_headers": [
+      [
+        "survey_id",
+        "respondent_id",
+        "topic",
+        "Question_4",
+        "Question_5",
+        "Question_6"
+      ],
+      [
+        "survey_id",
+        "respondent_id",
+        "topic",
+        "Question_4",
+        "Question_6"
+      ],
+      [
+        "survey_id",
+        "respondent_id",
+        "topic",
+        "Question_5",
+        "Question_6"
+      ]
+    ],
+    "quadrant_questions": [
+      {
+        "182331757": [
+          "725447414",
+          "725447415",
+          "726046390"
+        ]
+      },
+      {
+        "182331757": [
+          "725447414",
+          "726046390"
+        ]
+      },
+      {
+        "182331757": [
+          "725447415",
+          "726046390"
+        ]
+      }
+    ],
+    "quadrant_config": [
+      {
+        "use_topic": true,
+        "use_score": true,
+        "is_expected_preferred": true
+      },
+      {
+        "use_topic": true,
+        "use_score": true,
+        "is_expected_preferred": false
+      },
+      {
+        "use_topic": true,
+        "use_score": true,
+        "is_expected_preferred": false
+      }
+    ],
+    "quadrant_replacements": {},
+    "quadrant_futures": [
+      "Expected Future",
+      "Most Preferred Future",
+      "Least Desirable Future"
+    ]
+  }
+}

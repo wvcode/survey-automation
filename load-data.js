@@ -109,7 +109,8 @@ async function execute(cfg, log, params) {
               runConfig.config.quadrant_questions[idx],
               runConfig.config.quadrant_config[idx].use_topic,
               runConfig.config.quadrant_config[idx].use_score,
-              runConfig.config.quadrant_headers[idx]
+              runConfig.config.quadrant_headers[idx],
+              runConfig.config.quadrant_futures
             )
           )
         } else {
