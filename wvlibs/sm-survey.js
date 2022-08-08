@@ -324,6 +324,9 @@ class SurveyProccessor {
                 if (this.#questionList[questionId].subtype == 'numerical') {
                   record.score = item.text
                 }
+                if (this.#questionList[questionId].subtype == 'multi') {
+                  record.score = item.text
+                }
                 if (_.has(item, 'row_id')) {
                   if (this.#questionList[questionId].choices.length > 0) {
                     record.topic = this.#questionList[questionId].choices[
@@ -467,8 +470,16 @@ class SurveyProccessor {
                   rawData[item.respondent_id][qstLookup[item.question_id]] =
                     item.answer
                 } else {
-                  rawData[item.respondent_id][qstLookup[item.question_id]] +=
-                    '#' + item.answer
+                  if (
+                    rawData[item.respondent_id][qstLookup[item.question_id]] !=
+                    '--'
+                  ) {
+                    rawData[item.respondent_id][qstLookup[item.question_id]] +=
+                      '#' + item.answer
+                  } else {
+                    rawData[item.respondent_id][qstLookup[item.question_id]] =
+                      item.answer
+                  }
                 }
               } else {
                 rawData[item.respondent_id][qstLookup[item.question_id]] =
