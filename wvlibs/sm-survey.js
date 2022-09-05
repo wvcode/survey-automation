@@ -322,7 +322,7 @@ class SurveyProccessor {
               if (this.#questionList[questionId].family == 'open_ended') {
                 record.answer = item.text
                 if (this.#questionList[questionId].subtype == 'numerical') {
-                  record.score = item.text
+                  record.score = eval(item.text)
                 }
                 if (this.#questionList[questionId].subtype == 'multi') {
                   record.score = item.text
