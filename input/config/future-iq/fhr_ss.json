@@ -1,0 +1,154 @@
+{
+  "strings": {
+    "answers_file": "../Dropbox/Tableau Dashboards/data/fhr_ss_answers_data.csv",
+    "respondents_file": "../Dropbox/Tableau Dashboards/data/fhr_ss_respondents_data.csv",
+    "profiles_file": "../Dropbox/Tableau Dashboards/data/fhr_ss_profiles_data.csv",
+    "questions_file": "../Dropbox/Tableau Dashboards/data/fhr_ss_questions_data.csv",
+    "open_ended_file": "../Dropbox/Tableau Dashboards/data/fhr_ss_openended_data.csv",
+    "open_ended_sa_file": "../Dropbox/Tableau Dashboards/data/fhr_ss_openended_sa_data.csv",
+    "collectors_file": "../Dropbox/Tableau Dashboards/data/fhr_ss_collectors_data.csv",
+    "padded_answers_file": "../Dropbox/Tableau Dashboards/data/fhr_ss_padded_answers_data.csv"
+  },
+  "single_json_file": "../Dropbox/Tableau Dashboards/fhr_ss_full.json",
+  "access_token": "ZcKWsop3BlSFru95Isyko7Apq1K29WxnOJ3yUz1hS6XfyubBK71cnRTp-f1fXmbjVUeHO79yVlICzgJ4wGWaYL4UAMms-Xjnvp70zIe2PP3CKCcXyQ7WYBAGn5Kmd2LO",
+  "survey_id": "509992258",
+  "proxy": "{proxy}",
+  "numbers": {
+    "DryRun": false,
+    "DryRunLimit": 10,
+    "use_proxy": false,
+    "get_random_proxy": false,
+    "score_default_value": 0
+  },
+  "booleans": {
+    "generate_quadrants": true,
+    "generate_openended": true,
+    "generate_profiles": true,
+    "generate_sa": false,
+    "generate_padded_answers": true,
+    "is_network_map": false
+  },
+  "structures": {
+    "openended_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer"
+    ],
+    "answers_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer",
+      "topic",
+      "score"
+    ],
+    "questions_header": [
+      "survey_id",
+      "page_id",
+      "question_id",
+      "question_label",
+      "question_heading",
+      "question_type",
+      "question_subtype"
+    ],
+    "respondent_header": [
+      "survey_id",
+      "respondent_id",
+      "duration_seconds",
+      "start_date",
+      "end_date",
+      "ip_address",
+      "collector_id",
+      "status"
+    ],
+    "sa_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer",
+      "polarity",
+      "subjectivity"
+    ],
+    "collectors_header": [
+      "survey_id",
+      "collector_id",
+      "name"
+    ]
+  },
+  "config": {
+    "profiles_header": [
+      "survey_id",
+      "respondent_id",
+      "Question_3",
+      "Question_4",
+      "Question_5",
+      "Question_6",
+      "Question_7",
+      "Question_8"
+    ],
+    "profiles_multiple": [],
+    "respondent_profile_questions": {
+      "35832622": [
+        "108110027",
+        "108110011",
+        "108110002",
+        "108110018",
+        "108110000",
+        "108109999"
+      ]
+    },
+    "quadrant_files": [
+      "../Dropbox/Tableau Dashboards/data/fhr_ss_quadrants_data_1.csv"
+    ],
+    "quadrant_headers": [
+      [
+        "survey_id",
+        "respondent_id",
+        "topic",
+        "Question_9",
+        "Question_12",
+        "Question_15",
+        "Question_17",
+        "Question_19",
+        "Question_20",
+        "Question_25",
+        "Question_26"
+      ]
+    ],
+    "quadrant_questions": [
+      {
+        "35832624": [
+          "108110012",
+          "108110021"
+        ],
+        "35832625": [
+          "108110001",
+          "108110023"
+        ],
+        "35832626": [
+          "108110005",
+          "108110008"
+        ],
+        "35832627": [
+          "108110024",
+          "108110026"
+        ]
+      }
+    ],
+    "quadrant_config": [
+      {
+        "use_topic": true,
+        "use_score": true,
+        "is_expected_preferred": false
+      }
+    ],
+    "quadrant_replacements": {}
+  }
+}
