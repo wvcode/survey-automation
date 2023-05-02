@@ -1,0 +1,150 @@
+{
+  "strings": {
+    "answers_file": "data/cor_sps_answers_data.csv",
+    "respondents_file": "data/cor_sps_respondents_data.csv",
+    "profiles_file": "data/cor_sps_profiles_data.csv",
+    "questions_file": "data/cor_sps_questions_data.csv",
+    "open_ended_file": "data/cor_sps_openended_data.csv",
+    "open_ended_sa_file": "data/cor_sps_openended_sa_data.csv",
+    "collectors_file": "data/cor_sps_collectors_data.csv",
+    "padded_answers_file": "data/cor_sps_padded_answers_data.csv"
+  },
+  "single_json_file": "cor_sps_full.json",
+  "access_token": "ZcKWsop3BlSFru95Isyko7Apq1K29WxnOJ3yUz1hS6XfyubBK71cnRTp-f1fXmbjVUeHO79yVlICzgJ4wGWaYL4UAMms-Xjnvp70zIe2PP3CKCcXyQ7WYBAGn5Kmd2LO",
+  "survey_id": "511619884",
+  "proxy": "{proxy}",
+  "numbers": {
+    "DryRun": false,
+    "DryRunLimit": 10,
+    "use_proxy": false,
+    "get_random_proxy": false,
+    "score_default_value": 0
+  },
+  "booleans": {
+    "generate_quadrants": true,
+    "generate_openended": true,
+    "generate_profiles": true,
+    "generate_sa": false,
+    "generate_padded_answers": true,
+    "is_network_map": false
+  },
+  "structures": {
+    "openended_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer"
+    ],
+    "answers_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer",
+      "topic",
+      "score"
+    ],
+    "questions_header": [
+      "survey_id",
+      "page_id",
+      "question_id",
+      "question_label",
+      "question_heading",
+      "question_type",
+      "question_subtype"
+    ],
+    "respondent_header": [
+      "survey_id",
+      "respondent_id",
+      "duration_seconds",
+      "start_date",
+      "end_date",
+      "ip_address",
+      "collector_id",
+      "status"
+    ],
+    "sa_header": [
+      "survey_id",
+      "page_id",
+      "respondent_id",
+      "question_id",
+      "question_type",
+      "answer",
+      "polarity",
+      "subjectivity"
+    ],
+    "collectors_header": [
+      "survey_id",
+      "collector_id",
+      "name"
+    ]
+  },
+  "config": {
+    "profiles_header": [
+      "survey_id",
+      "respondent_id",
+      "Question_3",
+      "Question_4",
+      "Question_5",
+      "Question_6"
+    ],
+    "profiles_multiple": [],
+    "respondent_profile_questions": {
+      "39388833": [
+        "124437250",
+        "124437239",
+        "124437240",
+        "125402593"
+      ]
+    },
+    "quadrant_files": [
+      "data/cor_sps_quadrants_data_1.csv"
+    ],
+    "quadrant_headers": [
+      [
+        "survey_id",
+        "respondent_id",
+        "topic",
+        "Question_7",
+        "Question_8",
+        "Question_9",
+        "Question_10",
+        "Question_11",
+        "Question_12",
+        "Question_13",
+        "Question_14",
+        "Question_16"
+      ]
+    ],
+    "quadrant_questions": [
+      {
+        "39388834": [
+          "124437255",
+          "124441592",
+          "124437256"
+        ],
+        "39388835": [
+          "124437257",
+          "124442842",
+          "124445783"
+        ],
+        "39388836": [
+          "124448286",
+          "124448989",
+          "124448993"
+        ]
+      }
+    ],
+    "quadrant_config": [
+      {
+        "use_topic": true,
+        "use_score": true,
+        "is_expected_preferred": false
+      }
+    ],
+    "quadrant_replacements": {}
+  }
+}
