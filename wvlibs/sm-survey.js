@@ -165,7 +165,7 @@ class SurveyProccessor {
     const tagRe = /<[^>]+>/gim
     Object.entries(rec).forEach(([key, value]) => {
       if (value && typeof value === 'string') {
-        rec[key] = value.replace(tagRe, '').trim()
+        rec[key] = value.replace(tagRe, '^').trim()
       }
     })
     return rec
@@ -366,11 +366,11 @@ class SurveyProccessor {
                       ].text?.replace('\xa0', ' ')
                       record.answer =
                         this.#questionList[questionId].choices[item.row_id][
-                          'data'
+                        'data'
                         ][item.choice_id]
                       record.score = this.returnScore(
                         this.#questionList[questionId].choices[item.row_id][
-                          'data'
+                        'data'
                         ][item.choice_id]
                       )
                     } else {
@@ -388,7 +388,7 @@ class SurveyProccessor {
                 try {
                   item.score =
                     cfg.config.quadrant_replacements[item.question_id][
-                      item.answer
+                    item.answer
                     ]
                 } catch (e) {
                   item.score = 0
@@ -454,11 +454,11 @@ class SurveyProccessor {
             if (item.topic != 'Open Ended') {
               rawData[item.respondent_id][item.topic][
                 qstLookup[item.question_id]
-              ] = item.answer || ''
+              ] = item.answer || '--'
             } else {
               rawData[item.respondent_id]['Other'][
                 qstLookup[item.question_id]
-              ] = ''
+              ] = '--'
             }
           } else {
             if (item.topic != 'Open Ended') {
@@ -483,7 +483,7 @@ class SurveyProccessor {
                 }
               } else {
                 rawData[item.respondent_id][qstLookup[item.question_id]] =
-                  item.answer || ''
+                  item.answer || '--'
               }
             } else {
               rawData[item.respondent_id][qstLookup[item.question_id]] = 'Other'
@@ -500,7 +500,7 @@ class SurveyProccessor {
           rawData[item.respondent_id] = {}
           if (!useTopic) {
             Object.keys(qstLookup).forEach(key => {
-              rawData[item.respondent_id][qstLookup[key]] = ''
+              rawData[item.respondent_id][qstLookup[key]] = '--'
             })
           }
         }
@@ -509,9 +509,9 @@ class SurveyProccessor {
             rawData[item.respondent_id][item.topic] = {}
             Object.keys(qstLookup).forEach(key => {
               if (useTopic) {
-                rawData[item.respondent_id][item.topic][qstLookup[key]] = ''
+                rawData[item.respondent_id][item.topic][qstLookup[key]] = '--'
               } else {
-                rawData[item.respondent_id][qstLookup[key]] = ''
+                rawData[item.respondent_id][qstLookup[key]] = '--'
               }
             })
           }
@@ -530,16 +530,16 @@ class SurveyProccessor {
             if (item.topic != 'Open Ended') {
               rawData[item.respondent_id][item.topic][
                 qstLookup[item.question_id]
-              ] = item.answer || ''
+              ] = item.answer || '--'
             } else {
               rawData[item.respondent_id]['Other'][
                 qstLookup[item.question_id]
-              ] = item.answer || ''
+              ] = item.answer || '--'
             }
           } else {
             if (item.topic != 'Open Ended') {
               rawData[item.respondent_id][qstLookup[item.question_id]] =
-                item.answer || ''
+                item.answer || '--'
             } else {
               rawData[item.respondent_id][qstLookup[item.question_id]] = 'Other'
             }
@@ -566,12 +566,12 @@ class SurveyProccessor {
           rawData[item.respondent_id] = {}
           if (!useTopic) {
             Object.keys(qstLookup).forEach(key => {
-              rawData[item.respondent_id][qstLookup[key]] = ''
+              rawData[item.respondent_id][qstLookup[key]] = '--'
             })
           }
         }
         rawData[item.respondent_id][qstLookup[item.question_id] || 'garbage'] =
-          item.answer || ''
+          item.answer || '--'
       }
     })
 
@@ -788,7 +788,11 @@ class SurveyProccessor {
         let values = row[item].split('#')
         Object.entries(values).forEach(([cnt, val]) => {
           let record = _.cloneDeep(row)
-          record[item] = val
+          if (val == null || val == "--" || val == "Null") {
+            record[item] = "--"
+          } else {
+            record[item] = val
+          }
           record['cnt'] = parseInt(cnt) + 1
           returnData.push(record)
         })
