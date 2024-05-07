@@ -782,10 +782,13 @@ class SurveyProccessor {
 
   async breakdownMultipleAnswers(questions, rawData) {
     let returnData = []
-    let midData = []
+    let midData = _.cloneDeep(rawData)
     Object.entries(questions).forEach(([idx, item]) => {
-      rawData.forEach(row => {
-        let values = row[item].split('#')
+      midData.forEach(row => {
+        let values = []
+        if (row[item]) {
+          values = row[item].split('#')
+        }
         Object.entries(values).forEach(([cnt, val]) => {
           let record = _.cloneDeep(row)
           if (val == null || val == "--" || val == "Null") {
@@ -797,10 +800,10 @@ class SurveyProccessor {
           returnData.push(record)
         })
       })
-      rawData = _.cloneDeep(returnData)
+      midData = _.cloneDeep(returnData)
       returnData = []
     })
-    return rawData
+    return midData
   }
 }
 
