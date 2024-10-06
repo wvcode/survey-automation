@@ -21,7 +21,7 @@
     "score_default_value": 0
   },
   "booleans": {
-    "generate_quadrants": false,
+    "generate_quadrants": true,
     "generate_openended": true,
     "generate_profiles": true,
     "generate_sa": false,
@@ -102,10 +102,37 @@
         "206615823"
       ]
     },
-    "quadrant_files": [],
-    "quadrant_headers": [],
-    "quadrant_questions": [],
-    "quadrant_config": [],
+    "quadrant_files": [
+      "data/sgr_ss_quadrants_data_1.csv"
+    ],
+    "quadrant_headers": [
+      [
+        "survey_id",
+        "respondent_id",
+        "topic",
+        "Question_7",
+        "Question_8",
+        "Question_9",
+        "Question_10"
+      ]
+    ],
+    "quadrant_questions": [
+      {
+        "57650362": [
+          "206615814",
+          "206615798",
+          "208094579",
+          "208091306"
+        ]
+      }
+    ],
+    "quadrant_config": [
+      {
+        "use_topic": true,
+        "use_score": true,
+        "is_expected_preferred": false
+      }
+    ],
     "quadrant_replacements": {}
   }
 }
