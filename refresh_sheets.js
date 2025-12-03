@@ -51,7 +51,7 @@ async function execute(cfg, log, params) {
     tokenFile: './keys/token.json',
     scopes: cfg.scopes,
   })
-  isStarted = gs ? true : fale
+  isStarted = gs ? true : false
 
   let sm = new SurveyApi(cfg.access_token)
 
